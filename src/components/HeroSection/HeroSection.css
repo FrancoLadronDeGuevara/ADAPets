@@ -1,0 +1,43 @@
+@keyframes slowZoom {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+@keyframes reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineGrow {
+  from { width: 0; }
+  to { width: 64px; }
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 15s ease-out forwards;
+}
+
+.animate-reveal {
+  animation: reveal 1.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-line-grow {
+  animation: lineGrow 1.2s ease-out forwards;
+}
+
+
