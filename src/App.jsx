@@ -14,11 +14,20 @@ function App() {
     <>
       <HeroSection onOpenModal={() => setIsModalOpen(true)} />
 
-      <ModalHero isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <ModalHero
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
 
+      {/* 👇 SE OCULTA SOLO CUANDO SE ABRE EL MODAL HERO */}
+      {!isModalOpen && (
+        <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />
+      )}
 
-      <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />
-      <ModalHelp isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+      <ModalHelp
+        isOpen={isHelpOpen}
+        onClose={() => setIsHelpOpen(false)}
+      />
     </>
   );
 }
