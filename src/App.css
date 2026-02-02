@@ -1,7 +1,28 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme {
+  /* --- COLORES MODO CLARO (Default) --- */
+  --color-vet-bg: #f9fbf7;
+  --color-vet-text: #ffffff;
+  --color-vet-primary: #88a270;
+  --color-vet-dark: #2c5f5d;
+  --color-vet-surface: #4a4a4a;
+  --color-vet-accent: #f37b62;
+
+  /* --- COLORES MODO OSCURO --- */
+  --color-vet-bg-dark: #12181b;
+  --color-vet-surface-dark: #1b2429;
+  --color-vet-text-dark: #e2e8f0;
+  --color-vet-primary-dark: #a3bc8d;
+}
+
+@layer base {
+  body {
+    @apply bg-vet-bg text-vet-text transition-colors duration-300;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .dark body {
+    @apply bg-vet-bg-dark text-vet-text-dark;
+  }
 }
