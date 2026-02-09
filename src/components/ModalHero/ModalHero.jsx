@@ -26,14 +26,14 @@ const ModalHero = ({ isOpen, onClose }) => {
           relative ml-auto
           w-full md:w-1/2
           h-full
-          bg-[#F9FBF7]
+          bg-vet-bg
           p-8 md:p-12
           animate-slide-in
         "
       >
         {/* HEADER */}
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-semibold text-[#2C5F5D]">
+          <h2 className="text-3xl font-semibold text-vet-dark dark:text-vet-primary">
             Solicitar Cita
           </h2>
 
@@ -51,40 +51,43 @@ const ModalHero = ({ isOpen, onClose }) => {
           <input
             type="text"
             placeholder="Nombre del tutor"
-            className="w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#88A270]"
+            className="w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark dark:border-vet-primary/30 text-vet-surface dark:text-vet-text placeholder-gray-400 dark:placeholder-gray-500"
           />
 
           <input
             type="text"
             placeholder="Nombre de la mascota"
-            className="w-full p-4 border rounded-md"
+            className="w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark dark:border-vet-primary/30 text-vet-surface dark:text-vet-text placeholder-gray-400 dark:placeholder-gray-500"
           />
 
-          <select className="w-full p-4 border rounded-md">
+          <select className="w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark dark:border-vet-primary/30 text-vet-surface dark:text-vet-text">
             <option>Tipo de consulta</option>
             <option>Consulta general</option>
             <option>Vacunación</option>
             <option>Urgencia</option>
           </select>
 
-          <input type="date" className="w-full p-4 border rounded-md" />
+          <input
+            type="date"
+            className="w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark dark:border-vet-primary/30 text-vet-surface dark:text-vet-text"
+          />
 
           <textarea
             rows="4"
             placeholder="Comentarios adicionales"
-            className="w-full p-4 border rounded-md"
+            className="w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark dark:border-vet-primary/30 text-vet-surface dark:text-vet-text placeholder-gray-400 dark:placeholder-gray-500"
           />
 
           <button
             type="submit"
             className="
               w-full
-              bg-[#E98074]
-              text-white
+              bg-vet-accent
+              text-vet-text
               p-4
               rounded-md
               font-semibold
-              hover:bg-[#d47266]
+              hover:bg-vet-accent-hover
               transition-colors
             "
           >
