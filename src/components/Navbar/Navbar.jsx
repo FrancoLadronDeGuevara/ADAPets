@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Logo from "../../assets/Logo/logo.png";
 import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = ({ onOpenModal }) => {
