@@ -87,7 +87,7 @@ const Navbar = ({ onOpenModal }) => {
             href="/"
             className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105 absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0"
           >
-            <div className="hidden sm:flex flex-col">
+            <div className="flex flex-col">
               <span
                 className="text-vet-primary text-2xl font-bold tracking-tight"
                 style={{ fontFamily: "'Fredoka', sans-serif" }}
