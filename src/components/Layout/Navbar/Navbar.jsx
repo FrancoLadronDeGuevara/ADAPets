@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "../../context/ThemeContext";
+import { useTheme } from "@/context/ThemeContext";
+import { categorias } from "@/constants";
 
 const Navbar = ({ onOpenModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -116,33 +117,17 @@ const Navbar = ({ onOpenModal }) => {
 
           {/* DESKTOP MENU */}
           <ul className="hidden lg:flex items-center gap-8">
-            <li className="group relative">
-              <a
-                className="text-vet-text text-sm font-medium tracking-wide hover:text-vet-primary transition-colors duration-300"
-                href="#servicios"
-              >
-                SERVICIOS
-              </a>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
-            </li>
-            <li className="group relative">
-              <a
-                className="text-vet-text text-sm font-medium tracking-wide hover:text-vet-primary transition-colors duration-300"
-                href="#nosotras"
-              >
-                NOSOTRAS
-              </a>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
-            </li>
-            <li className="group relative">
-              <a
-                className="text-vet-text text-sm font-medium tracking-wide hover:text-vet-primary transition-colors duration-300"
-                href="#contacto"
-              >
-                CONTACTO
-              </a>
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
-            </li>
+            {categorias.map((categoria, index) => (
+              <li key={index} className="group relative">
+                <a
+                  className="text-vet-text text-sm font-medium tracking-wide hover:text-vet-primary transition-colors duration-300 uppercase"
+                  href={`#${categoria}`}
+                >
+                  {categoria}
+                </a>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-linear-to-r from-vet-primary to-vet-accent transition-all duration-300 group-hover:w-full"></span>
+              </li>
+            ))}
           </ul>
 
           {/* THEME TOGGLE + CTA BUTTON */}
@@ -267,34 +252,17 @@ const Navbar = ({ onOpenModal }) => {
           `}
         >
           <ul className="flex flex-col gap-4 pb-6">
-            <li>
-              <a
-                className="block text-vet-text text-base font-medium tracking-wide hover:text-vet-primary transition-colors duration-300 py-2 border-b border-vet-text/10"
-                href="#servicios"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                SERVICIOS
-              </a>
-            </li>
-            <li>
-              <a
-                className="block text-vet-text text-base font-medium tracking-wide hover:text-vet-primary transition-colors duration-300 py-2 border-b border-vet-text/10"
-                href="#nosotras"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                NOSOTRAS
-              </a>
-            </li>
-            <li>
-              <a
-                className="block text-vet-text text-base font-medium tracking-wide hover:text-vet-primary transition-colors duration-300 py-2 border-b border-vet-text/10"
-                href="#contacto"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                CONTACTO
-              </a>
-            </li>
-
+            {categorias.map((categoria, index) => (
+              <li key={index}>
+                <a
+                  className="block text-vet-text text-base font-medium tracking-wide hover:text-vet-primary transition-colors duration-300 py-2 border-b border-vet-text/10 uppercase"
+                  href={`#${categoria}`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {categoria}
+                </a>
+              </li>
+            ))}
             <li className="pt-2">
               <button
                 onClick={() => {

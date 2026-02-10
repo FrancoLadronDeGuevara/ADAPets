@@ -1,4 +1,4 @@
-import BtnFlotante from "../../assets/Boton-Flotante/btn-consultas.png";
+import BtnFlotante from "@/assets/Boton-Flotante/btn-consultas.png";
 
 const WhatsappBtn = ({ onOpenHelp }) => {
   return (

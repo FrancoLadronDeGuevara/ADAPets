@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import "./HeroSection.css";
 
-import heroVideo from "../../assets/Video-Hero/Hero-Video.mp4";
+import heroVideo from "@/assets/Video-Hero/Hero-Video.mp4";
 
 const HeroSection = ({ onOpenModal }) => {
   const videoRef = useRef(null);

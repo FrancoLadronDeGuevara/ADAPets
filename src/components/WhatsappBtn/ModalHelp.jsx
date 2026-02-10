@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { getBotResponse } from "../../utils/whatsappBot";
+import { getBotResponse } from "@/utils/whatsappBot";
 
 const ModalHelp = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([

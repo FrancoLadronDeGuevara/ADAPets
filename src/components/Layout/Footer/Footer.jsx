@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import {
   FaInstagram,
   FaFacebook,
@@ -7,33 +9,18 @@ import {
   FaMapMarkerAlt,
   FaWhatsapp,
 } from "react-icons/fa";
-import "./Footer.css";
-import { useState, useEffect } from "react";
 
-import visa from "../../assets/Footer-Tarjetas/visa.png";
-import mastercard from "../../assets/Footer-Tarjetas/mastercard.png";
-import cencosud from "../../assets/Footer-Tarjetas/cencosud.png";
-import link from "../../assets/Footer-Tarjetas/link.png";
-import nativa from "../../assets/Footer-Tarjetas/nativa.png";
-import rapipago from "../../assets/Footer-Tarjetas/rapipago.png";
-import Button from "../FooterSection/Button";
+import Button from "./Button";
+
+import "./Footer.css";
+
+import { emailRegex, categorias, mediosPago } from "@/constants";
 
 const redes = [
   { id: 1, url: "https://instagram.com", icon: <FaInstagram size={28} /> },
   { id: 2, url: "https://facebook.com", icon: <FaFacebook size={28} /> },
   { id: 3, url: "https://tiktok.com", icon: <FaTiktok size={28} /> },
 ];
-
-const mediosPago = [
-  { id: 1, img: visa, alt: "Visa" },
-  { id: 2, img: mastercard, alt: "Mastercard" },
-  { id: 3, img: cencosud, alt: "Cencosud" },
-  { id: 4, img: link, alt: "Link" },
-  { id: 5, img: nativa, alt: "Nativa" },
-  { id: 6, img: rapipago, alt: "Rapipago" },
-];
-
-const categorias = ["Servicios", "Nosotras", "Contacto"];
 
 function Footer() {
   const [email, setEmail] = useState("");
@@ -50,8 +37,6 @@ function Footer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!email) {
       setMensaje("Por favor ingresá un email");
