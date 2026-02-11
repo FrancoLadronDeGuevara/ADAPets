@@ -10,6 +10,7 @@ import {
   WhatsappBtn,
   ModalHelp,
 } from "@/components";
+import Contacto from "./components/Contacto/Contacto";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,6 +26,8 @@ function App() {
         {!isModalOpen && <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />}
 
         <ModalHelp isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+        
+        <Contacto/>
       </Layout>
     </ThemeProvider>
   );
