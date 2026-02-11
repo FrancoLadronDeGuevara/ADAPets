@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { FaPaw } from "react-icons/fa"; // Importacion de la patita
 
 import {
   FaInstagram,
@@ -206,7 +207,10 @@ function Footer() {
         <div className="professional-divider">
           <div className="divider-line" />
           <div className="divider-accent" />
-          <div className="divider-icon">🐾</div>
+          <div className="divider-icon">
+            <FaPaw className="paw-left"/> 
+            <FaPaw className="paw-right"/> 
+          </div>
         </div>
 
         <div className="flex flex-col items-center gap-1">
