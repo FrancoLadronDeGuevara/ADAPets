@@ -1,0 +1,132 @@
+/* Animacion linea */
+.professional-divider {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* Línea base muy sutil */
+.divider-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            var(--color-vet-gray) 20%,
+            var(--color-vet-gray) 42%,
+            /* La línea llega hasta aquí */
+            transparent 42%,
+            /* Hueco transparente */
+            transparent 58%,
+            /* Hueco transparente */
+            var(--color-vet-gray) 58%,
+            /* La línea retoma aquí */
+            var(--color-vet-gray) 80%,
+            transparent 100%);
+    opacity: 0.3;
+}
+
+/* El destello que recorre la línea */
+.divider-accent {
+    position: absolute;
+    width: 150px;
+    height: 2px;
+    z-index: 2;
+    background: linear-gradient(90deg,
+            transparent,
+            var(--color-vet-accent),
+            transparent);
+    filter: blur(2px);
+    animation: sweep-move 4s linear infinite;
+}
+
+/* El icono central */
+.divider-icon {
+    position: relative;
+    z-index: 10;
+    background-color: var(--color-vet-bg);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* Sombra para que no parezca un bloque pegado */
+    box-shadow: 0 0 20px 10px var(--color-vet-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--color-vet-gray);
+    animation: paw-glow 4s linear infinite;
+}
+
+.paw-left {
+    font-size: 18px;
+    transform: translateY(4px) rotate(-15deg);
+
+}
+
+.paw-right {
+    font-size: 18px;
+    transform: translateY(-4px) rotate(15deg);
+}
+
+/* Animaciones */
+@keyframes sweep-move {
+
+    /* La línea recorre de -250px a 250px de forma constante */
+    0% {
+        transform: translateX(-250px);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(250px);
+        opacity: 0;
+    }
+}
+
+@keyframes paw-glow {
+
+    0%,
+    42% {
+        color: var(--color-vet-gray);
+        transform: scale(1);
+    }
+
+    50% {
+        color: var(--color-vet-accent);
+        transform: scale(1.2);
+    }
+
+    58%,
+    100% {
+        color: var(--color-vet-gray);
+        transform: scale(1);
+    }
+}
