@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { emailRegex } from '@/constants';
 import { BsSend } from 'react-icons/bs';
 
-const Contacto = () => {
+const Contact = () => {
 	// Estado para manejar los datos del formulario
 	const [formData, setFormData] = useState({
 		nombre: '',
@@ -195,4 +195,4 @@ const Contacto = () => {
 	);
 };
 
-export default Contacto;
+export default Contact;

@@ -9,8 +9,9 @@ import {
   ModalHero,
   WhatsappBtn,
   ModalHelp,
+  Contact
 } from "@/components";
-import Contacto from "./components/Contacto/Contacto";
+
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,7 +28,7 @@ function App() {
 
         <ModalHelp isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
         
-        <Contacto/>
+        <Contact/>
       </Layout>
     </ThemeProvider>
   );
