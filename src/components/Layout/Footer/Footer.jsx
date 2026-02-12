@@ -210,7 +210,7 @@ function Footer() {
 			{/* Parte inferior */}
 			<div className="mt-4 flex flex-col items-center gap-6 text-sm border-t border-white/5 pt-8">
 				{/* Separador Animado Minimalista */}
-				<Divider />
+				<Divider footer/>
 
 				<div className="flex flex-col items-center gap-1">
 					<p className="text-muted font-medium tracking-wide">
