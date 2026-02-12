@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { emailRegex } from '@/constants';
 import { BsSend } from 'react-icons/bs';
+import Background from '../Background/Background';
 
 const Contact = () => {
 	// Estado para manejar los datos del formulario
@@ -73,7 +74,7 @@ const Contact = () => {
 	// Use esta manera porque sino tenemos que cambiar la configuracion de Tailwind para agregar clases dinamicas, y esto es mas sencillo y limpio para este caso puntual, ademas de que no se repiten las clases en el codigo JSX
 
 	const contactSectionClass =
-		'w-full flex flex-col items-center justify-center p-6 bg-vet-bg transition-colors duration-300';
+		'relative  w-full flex flex-col items-center justify-center p-6 bg-vet-bg transition-colors duration-300';
 
 	const titleContactSectionClass =
 		'bg-vet-primary uppercase w-full max-w-4xl text-center text-3xl text-vet-text py-3 font-extrabold tracking-wide rounded-sm shadow-sm';
@@ -102,95 +103,100 @@ const Contact = () => {
 			: 'hover:bg-vet-accent-hover hover:scale-[1.04] hover:shadow-[0_16px_40px_rgba(233,128,116,0.45)] active:scale-95 cursor-pointer' // Estilo activo
 	}`;
 
-	const spanButton = 'transition-transform duration-300 group-hover:translate-x-2';
+	const spanButton =
+		'transition-transform duration-300 group-hover:translate-x-2';
 
 	return (
-		<section className={contactSectionClass} id='Contacto'>
-			{/* Encabezado Estilo Banner */}
-			<h2 className={titleContactSectionClass}>Contacto</h2>
+		<section className={contactSectionClass} id="Contacto">
+			<Background />
 
-			<form
-				onSubmit={handleSubmit}
-				className={formContactClass}
-				noValidate
-			>
-				{/* Campo Nombre */}
-				<div className={formGroupClass}>
-					<label htmlFor="nombre" className={formLabelClass}>
-						Nombre:
-					</label>
-					<input
-						type="text"
-						id="nombre"
-						name="nombre"
-						value={formData.nombre}
-						onChange={handleChange}
-						className={`${formInputClass} ${errors.nombre ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
-						placeholder="Tu nombre completo"
-					/>
-					{errors.nombre && (
-						<span className={errorClass}>{errors.nombre}</span>
-					)}
-				</div>
+			<div className="relative z-10 w-full flex flex-col items-center">
+				{/* Encabezado Estilo Banner */}
+				<h2 className={titleContactSectionClass}>Contacto</h2>
 
-				{/* Campo Email */}
-				<div className={formGroupClass}>
-					<label htmlFor="email" className={formLabelClass}>
-						Email:
-					</label>
-					<input
-						type="email"
-						id="email"
-						name="email"
-						value={formData.email}
-						onChange={handleChange}
-						className={`${formInputClass} ${errors.email ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
-						placeholder="ejemplo@correo.com"
-					/>
-					{errors.email && (
-						<span className={errorClass}>{errors.email}</span>
-					)}
-				</div>
-
-				{/* Campo Mensaje */}
-				<div className={formGroupClass}>
-					<label htmlFor="mensaje" className={formLabelClass}>
-						Mensaje:
-					</label>
-					<textarea
-						id="mensaje"
-						name="mensaje"
-						rows="5"
-						value={formData.mensaje}
-						onChange={handleChange}
-						className={`${formInputClass} ${errors.mensaje ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
-						placeholder="Escribe tu consulta aquí..."
-					></textarea>
-					{errors.mensaje && (
-						<span className={errorClass}>{errors.mensaje}</span>
-					)}
-				</div>
-
-				{/* Botón de Envío */}
-				<button
-					type="submit"
-					disabled={isSending}
-					className={buttonClass}
+				<form
+					onSubmit={handleSubmit}
+					className={formContactClass}
+					noValidate
 				>
-					Enviar
-					<span className={spanButton}>
-						<BsSend />
-					</span>
-				</button>
-
-				{/* Mensaje de Éxito */}
-				{isSubmitted && (
-					<div className={successMessageClass}>
-						¡Mensaje enviado con éxito! Nos pondremos en contacto
-						pronto.
+					{/* Campo Nombre */}
+					<div className={formGroupClass}>
+						<label htmlFor="nombre" className={formLabelClass}>
+							Nombre:
+						</label>
+						<input
+							type="text"
+							id="nombre"
+							name="nombre"
+							value={formData.nombre}
+							onChange={handleChange}
+							className={`${formInputClass} ${errors.nombre ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
+							placeholder="Tu nombre completo"
+						/>
+						{errors.nombre && (
+							<span className={errorClass}>{errors.nombre}</span>
+						)}
 					</div>
-				)}
-			</form>
+
+					{/* Campo Email */}
+					<div className={formGroupClass}>
+						<label htmlFor="email" className={formLabelClass}>
+							Email:
+						</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							value={formData.email}
+							onChange={handleChange}
+							className={`${formInputClass} ${errors.email ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
+							placeholder="ejemplo@correo.com"
+						/>
+						{errors.email && (
+							<span className={errorClass}>{errors.email}</span>
+						)}
+					</div>
+
+					{/* Campo Mensaje */}
+					<div className={formGroupClass}>
+						<label htmlFor="mensaje" className={formLabelClass}>
+							Mensaje:
+						</label>
+						<textarea
+							id="mensaje"
+							name="mensaje"
+							rows="5"
+							value={formData.mensaje}
+							onChange={handleChange}
+							className={`${formInputClass} ${errors.mensaje ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
+							placeholder="Escribe tu consulta aquí..."
+						></textarea>
+						{errors.mensaje && (
+							<span className={errorClass}>{errors.mensaje}</span>
+						)}
+					</div>
+
+					{/* Botón de Envío */}
+					<button
+						type="submit"
+						disabled={isSending}
+						className={buttonClass}
+					>
+						Enviar
+						<span className={spanButton}>
+							<BsSend />
+						</span>
+					</button>
+
+					{/* Mensaje de Éxito */}
+					{isSubmitted && (
+						<div className={successMessageClass}>
+							¡Mensaje enviado con éxito! Nos pondremos en
+							contacto pronto.
+						</div>
+					)}
+				</form>
+			</div>
 		</section>
 	);
 };
