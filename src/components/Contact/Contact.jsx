@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { emailRegex } from '@/constants';
 import { BsSend } from 'react-icons/bs';
 import Background from '../Background/Background';
+import './Contact.css';
 
 const Contact = () => {
 	// Estado para manejar los datos del formulario
@@ -70,58 +71,23 @@ const Contact = () => {
 		}
 	};
 
-	// Estilos css
-	// Use esta manera porque sino tenemos que cambiar la configuracion de Tailwind para agregar clases dinamicas, y esto es mas sencillo y limpio para este caso puntual, ademas de que no se repiten las clases en el codigo JSX
-
-	const contactSectionClass =
-		'relative  w-full flex flex-col items-center justify-center p-6 bg-vet-bg transition-colors duration-300';
-
-	const titleContactSectionClass =
-		'bg-vet-primary uppercase w-full max-w-4xl text-center text-3xl text-vet-text py-3 font-extrabold tracking-wide rounded-sm shadow-sm';
-
-	const formContactClass =
-		'w-full max-w-2xl flex flex-col gap-5 mt-8 items-center';
-
-	const formGroupClass = 'w-full flex flex-col gap-1.5';
-
-	const formLabelClass =
-		'text-vet-surface dark:text-vet-gray font-medium ml-1';
-
-	const formInputClass =
-		'w-full p-3 rounded-md outline-none border transition-all bg-vet-dark text-vet-text placeholder-vet-gray/50';
-
-	const errorClass = 'text-red-400 text-xs mt-1 ml-1 font-medium';
-
-	const successMessageClass =
-		'mt-4 p-3 bg-green-100 border border-green-400 text-green-700 text-center rounded-md animate-pulse';
-
-	const buttonClass = `w-1/3 p-3 rounded-md font-bold text-lg mt-4 transition-all duration-300 transition-all duration-300 ease-out
-                bg-vet-accent flex items-center gap-4 justify-center group relative
-    ${
-		isSending
-			? 'bg-gray-400 cursor-not-allowed opacity-70' // Estilo deshabilitado
-			: 'hover:bg-vet-accent-hover hover:scale-[1.04] hover:shadow-[0_16px_40px_rgba(233,128,116,0.45)] active:scale-95 cursor-pointer' // Estilo activo
-	}`;
-
-	const spanButton =
-		'transition-transform duration-300 group-hover:translate-x-2';
-
 	return (
-		<section className={contactSectionClass} id="Contacto">
+		<section className='section' id="Contacto">
+			
 			<Background />
 
-			<div className="relative z-10 w-full flex flex-col items-center">
+			<div className='wrapperSection'>
 				{/* Encabezado Estilo Banner */}
-				<h2 className={titleContactSectionClass}>Contacto</h2>
+				<h2 className='titleSection'>Contacto</h2>
 
 				<form
 					onSubmit={handleSubmit}
-					className={formContactClass}
+					className='formContact'
 					noValidate
 				>
 					{/* Campo Nombre */}
-					<div className={formGroupClass}>
-						<label htmlFor="nombre" className={formLabelClass}>
+					<div className='formGroup'>
+						<label htmlFor="nombre" className='formLabel'>
 							Nombre:
 						</label>
 						<input
@@ -130,17 +96,17 @@ const Contact = () => {
 							name="nombre"
 							value={formData.nombre}
 							onChange={handleChange}
-							className={`${formInputClass} ${errors.nombre ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
+							className={`formInput ${errors.nombre ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
 							placeholder="Tu nombre completo"
 						/>
 						{errors.nombre && (
-							<span className={errorClass}>{errors.nombre}</span>
+							<span className='error'>{errors.nombre}</span>
 						)}
 					</div>
 
 					{/* Campo Email */}
-					<div className={formGroupClass}>
-						<label htmlFor="email" className={formLabelClass}>
+					<div className='formGroup'>
+						<label htmlFor="email" className='formLabel'>
 							Email:
 						</label>
 						<input
@@ -149,17 +115,17 @@ const Contact = () => {
 							name="email"
 							value={formData.email}
 							onChange={handleChange}
-							className={`${formInputClass} ${errors.email ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
+							className={`formInput ${errors.email ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
 							placeholder="ejemplo@correo.com"
 						/>
 						{errors.email && (
-							<span className={errorClass}>{errors.email}</span>
+							<span className='error'>{errors.email}</span>
 						)}
 					</div>
 
 					{/* Campo Mensaje */}
-					<div className={formGroupClass}>
-						<label htmlFor="mensaje" className={formLabelClass}>
+					<div className='formGroup'>
+						<label htmlFor="mensaje" className='formLabel'>
 							Mensaje:
 						</label>
 						<textarea
@@ -168,11 +134,11 @@ const Contact = () => {
 							rows="5"
 							value={formData.mensaje}
 							onChange={handleChange}
-							className={`${formInputClass} ${errors.mensaje ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
+							className={`formInput ${errors.mensaje ? 'border-red-400 ring-1 ring-red-400' : 'border-transparent focus:ring-2 focus:ring-vet-primary'}`}
 							placeholder="Escribe tu consulta aquí..."
 						></textarea>
 						{errors.mensaje && (
-							<span className={errorClass}>{errors.mensaje}</span>
+							<span className='error'>{errors.mensaje}</span>
 						)}
 					</div>
 
@@ -180,17 +146,22 @@ const Contact = () => {
 					<button
 						type="submit"
 						disabled={isSending}
-						className={buttonClass}
+						className={`btnContactSubmit group ${
+		isSending
+			? 'bg-gray-400 cursor-not-allowed opacity-70' // Estilo deshabilitado
+			: 'hover:bg-vet-accent-hover hover:scale-[1.04] hover:shadow-[0_16px_40px_rgba(233,128,116,0.45)] active:scale-95 cursor-pointer' // Estilo activo
+	}`
+						}
 					>
 						Enviar
-						<span className={spanButton}>
+						<span className='spanBtnContactSubmit'>
 							<BsSend />
 						</span>
 					</button>
 
 					{/* Mensaje de Éxito */}
 					{isSubmitted && (
-						<div className={successMessageClass}>
+						<div className='successMessage'>
 							¡Mensaje enviado con éxito! Nos pondremos en
 							contacto pronto.
 						</div>
