@@ -105,7 +105,7 @@ const Contact = () => {
 	const spanButton = 'transition-transform duration-300 group-hover:translate-x-2';
 
 	return (
-		<section className={contactSectionClass}>
+		<section className={contactSectionClass} id='Contacto'>
 			{/* Encabezado Estilo Banner */}
 			<h2 className={titleContactSectionClass}>Contacto</h2>
 
