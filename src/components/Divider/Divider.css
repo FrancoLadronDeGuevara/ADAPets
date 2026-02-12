@@ -50,12 +50,9 @@
 .divider-icon {
     position: relative;
     z-index: 10;
-    /* background-color: var(--color-vet-bg); */
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    /* Sombra para que no parezca un bloque pegado */
-    /* box-shadow: 0 0 20px 10px var(--color-vet-bg); */
     display: flex;
     align-items: center;
     justify-content: center;
