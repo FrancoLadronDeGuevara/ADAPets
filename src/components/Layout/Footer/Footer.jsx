@@ -49,7 +49,14 @@ function Footer() {
 	};
 
 	return (
-		<footer className="w-full p-6 bg-vet-bg text-vet-text">
+		<footer
+			className="
+        w-full p-6
+        bg-vet-dark/95
+        backdrop-blur-xl
+        transition-all duration-500
+        text-vet-text"
+		>
 			{/* Parte superior */}
 			<div className="flex flex-col md:flex-row justify-between gap-6 max-w-6xl mx-auto w-full">
 				{/* Columna 1 */}
