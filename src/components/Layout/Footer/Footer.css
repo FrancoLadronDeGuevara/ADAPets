@@ -1,0 +1,75 @@
+/* Animacion linea */
+.professional-divider {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Línea base muy sutil */
+.divider-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(156, 163, 175, 0.2) 50%,
+    transparent 100%
+  );
+}
+
+/* El destello que recorre la línea */
+.divider-accent {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-vet-accent),
+    transparent
+  );
+  animation: sweep 4s ease-in-out infinite;
+}
+
+/* El icono central */
+.divider-icon {
+  position: relative;
+  background: var(--color-vet-bg); /* Tapar la línea detrás del icono */
+  padding: 0 15px;
+  font-size: 18px;
+  filter: grayscale(1);
+  opacity: 0.6;
+  animation: pulse-icon 3s ease-in-out infinite;
+}
+
+/* Animaciones */
+@keyframes sweep {
+  0% {
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(250px);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-icon {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}

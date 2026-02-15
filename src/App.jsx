@@ -1,35 +1,32 @@
 import { useState } from "react";
 import "./App.css";
-import HeroSection from "./components/HeroSection/HeroSection";
-import ModalHero from "./components/ModalHero/ModalHero";
-import WhatsappBtn from "./components/WhatsappBtn/WhatsappBtn";
-import ModalHelp from "./components/WhatsappBtn/ModalHelp";
+
+import { ThemeProvider } from "./context/ThemeContext";
+
+import {
+  Layout,
+  HeroSection,
+  ModalHero,
+  WhatsappBtn,
+  ModalHelp,
+} from "@/components";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isHelpOpen, setIsHelpOpen] = useState(false);
 
   return (
-    <>
+    <ThemeProvider>
+      <Layout>
+        <HeroSection onOpenModal={() => setIsModalOpen(true)} />
 
+        <ModalHero isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
-      <HeroSection onOpenModal={() => setIsModalOpen(true)} />
+        {!isModalOpen && <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />}
 
-      <ModalHero
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
-
-      {/* 👇 SE OCULTA SOLO CUANDO SE ABRE EL MODAL HERO */}
-      {!isModalOpen && (
-        <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />
-      )}
-
-      <ModalHelp
-        isOpen={isHelpOpen}
-        onClose={() => setIsHelpOpen(false)}
-      />
-    </>
+        <ModalHelp isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+      </Layout>
+    </ThemeProvider>
   );
 }
 
