@@ -87,7 +87,7 @@ const HeroSection = ({ onOpenModal }) => {
           {/* CTA */}
           <div className="mt-12 md:mt-24 animate-fade-in-up delay-300">
             <button
-              onClick={onOpenModal} // 👈 ACÁ ESTÁ LA MAGIA
+              onClick={onOpenModal} 
               className="
                 cursor-pointer
                 group relative
