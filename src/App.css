@@ -1,3 +1,6 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+
 @import "tailwindcss";
 
 @theme {
@@ -12,6 +15,9 @@
   --color-vet-text-muted: rgba(249, 251, 247, 0.8); /* Blanco Hueso Translúcido */
   --color-vet-gray: #9ca3af; /* Gris Medio */
 
+  --font-fredoka: "Fredoka", sans-serif;
+  --font-quicksand: "Quicksand", sans-serif;
+  
   /* Sombras */
   --shadow-glow-dark: 0 0 20px 10px var(--color-vet-dark);
   --shadow-glow-bg: 0 0 20px 10px var(--color-vet-bg);
