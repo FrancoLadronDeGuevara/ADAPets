@@ -23,7 +23,7 @@ const Navbar = ({ onOpenModal }) => {
   return (
     <header
       className={`
-        fixed w-full z-50 transition-all duration-500 ease-out
+        sticky top-0 w-full z-50 transition-all duration-500 ease-out
         ${
           isScrolled
             ? "bg-vet-dark/95 backdrop-blur-xl shadow-lg py-3"

@@ -2,15 +2,15 @@
 
 @theme {
   /* --- COLORES MODO CLARO (Default) --- */
-  --color-vet-bg: #f9fbf7;
-  --color-vet-text: #ffffff;
-  --color-vet-primary: #88a270;
-  --color-vet-dark: #2c5f5d;
-  --color-vet-surface: #4a4a4a;
-  --color-vet-accent: #e98074;
-  --color-vet-accent-hover: #d47266;
-  --color-vet-text-muted: rgba(249, 251, 247, 0.8);
-  --color-vet-gray: #9ca3af;
+  --color-vet-bg: #f9fbf7; /* Blanco Hueso / Crema Verdoso*/
+  --color-vet-text: #ffffff; /* Blanco Puro */
+  --color-vet-primary: #88a270; /* Verde Salvia / Oliva */
+  --color-vet-dark: #2c5f5d; /* Verde Azulado Oscuro / Petróleo */
+  --color-vet-surface: #4a4a4a; /* Gris Carbón */
+  --color-vet-accent: #e98074; /* Coral / Salmón */
+  --color-vet-accent-hover: #d47266; /* Coral Oscuro / Terracota */
+  --color-vet-text-muted: rgba(249, 251, 247, 0.8); /* Blanco Hueso Translúcido */
+  --color-vet-gray: #9ca3af; /* Gris Medio */
 }
 
 /* Dark mode color overrides */
@@ -29,6 +29,6 @@
   body {
     @apply bg-vet-bg text-vet-surface transition-colors duration-300;
     font-family: "Roboto", sans-serif;
-    height: 2000px;
+    height: 100vh;
   }
 }
