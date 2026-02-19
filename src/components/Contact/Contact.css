@@ -10,11 +10,17 @@
     }
 
     .titleSection {
-        @apply bg-vet-primary uppercase w-full text-center text-3xl text-vet-text py-3 font-bold font-fredoka tracking-wide rounded-sm shadow-sm;
+        background-color: color-mix(in srgb, var(--color-vet-primary), transparent 20%);
+        @apply backdrop-blur-md uppercase w-full max-w-2xl text-center text-3xl text-vet-text py-3 font-bold font-fredoka tracking-wide rounded-t-xl shadow-sm;
     }
 
     .formContact {
-        @apply w-full max-w-2xl flex flex-col gap-5 mt-8 items-center;
+        @apply w-full max-w-2xl flex flex-col gap-5 items-center p-8 bg-vet-bg/5 backdrop-blur-[5px];
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-top: none;
+        border-bottom-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     }
 
     .formGroup {
@@ -26,7 +32,7 @@
     }
 
     .formInput {
-        @apply w-full p-3 rounded-md outline-none border transition-all bg-vet-dark text-vet-text placeholder-vet-gray/50;
+        @apply w-full p-3 rounded-md outline-none border transition-all bg-vet-gray/20 text-vet-surface placeholder-vet-gray/50;
     }
 
     .error {
