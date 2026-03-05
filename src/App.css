@@ -1,5 +1,5 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap");
 
 @import "tailwindcss";
 
@@ -12,12 +12,17 @@
   --color-vet-surface: #4a4a4a; /* Gris Carbón */
   --color-vet-accent: #e98074; /* Coral / Salmón */
   --color-vet-accent-hover: #d47266; /* Coral Oscuro / Terracota */
-  --color-vet-text-muted: rgba(249, 251, 247, 0.8); /* Blanco Hueso Translúcido */
+  --color-vet-text-muted: rgba(
+    249,
+    251,
+    247,
+    0.8
+  ); /* Blanco Hueso Translúcido */
   --color-vet-gray: #9ca3af; /* Gris Medio */
 
   --font-fredoka: "Fredoka", sans-serif;
   --font-quicksand: "Quicksand", sans-serif;
-  
+
   /* Sombras */
   --shadow-glow-dark: 0 0 20px 10px var(--color-vet-dark);
   --shadow-glow-bg: 0 0 20px 10px var(--color-vet-bg);
@@ -25,14 +30,32 @@
 
 /* Dark mode color overrides */
 .dark {
+  /* Fondo principal oscuro — casi negro azulado */
   --color-vet-bg: #0f1419;
+
+  /* Texto puro sobre fondos oscuros */
   --color-vet-text: #f9fbf7;
+
+  /* Verde salvia más luminoso — visible sobre oscuro */
   --color-vet-primary: #a3bc8d;
+
+  /* En dark, vet-dark se usa como texto/superficie → necesita ser claro */
   --color-vet-dark: #1e3a38;
+
+  /* Texto base del body en dark → claro para contraste sobre vet-bg oscuro */
   --color-vet-surface: #e2e8f0;
+
+  /* Coral ligeramente más vivo en dark para resaltar sobre fondo oscuro */
   --color-vet-accent: #f39c92;
-  --color-vet-accent-hover: #f39c92;
-  --color-vet-text-muted: rgba(249, 251, 247, 0.8);
+
+  /* Hover del accent → más saturado/oscuro que el accent base */
+  --color-vet-accent-hover: #e07a6e;
+
+  /* Texto muted: algo visible pero sin protagonismo */
+  --color-vet-text-muted: rgba(200, 219, 216, 0.75);
+
+  /* Gris más claro en dark para que sea legible */
+  --color-vet-gray: #b0bec5;
 }
 
 @layer base {

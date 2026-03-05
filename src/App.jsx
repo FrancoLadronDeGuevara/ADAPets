@@ -9,7 +9,8 @@ import {
   ModalHero,
   WhatsappBtn,
   ModalHelp,
-  Contact
+  Contact,
+  Services,
 } from "@/components";
 
 function App() {
@@ -23,11 +24,13 @@ function App() {
 
         <ModalHero isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
+        <Services />
+
         {!isModalOpen && <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />}
 
         <ModalHelp isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
-        
-        <Contact/>
+
+        <Contact />
       </Layout>
     </ThemeProvider>
   );

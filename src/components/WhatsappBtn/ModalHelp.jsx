@@ -85,7 +85,7 @@ const ModalHelp = ({ isOpen, onClose }) => {
         </div>
 
         {/* CHAT AREA */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#e5ddd5] dark:bg-gray-800 relative">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-[#e5ddd5] relative">
           {/* Background Pattern Overlay */}
           <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat" />
 
@@ -119,12 +119,12 @@ const ModalHelp = ({ isOpen, onClose }) => {
         {/* INPUT AREA */}
         <form
           onSubmit={handleSendMessage}
-          className="p-3 bg-vet-bg border-t border-gray-200 dark:border-gray-700 flex gap-2 z-20"
+          className="p-3 bg-vet-bg border-t border-vet-gray/20 flex gap-2 z-20"
         >
           <input
             type="text"
             placeholder="Escribe un mensaje..."
-            className="flex-1 px-4 py-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-vet-primary/50 transition-all placeholder-gray-400"
+            className="flex-1 px-4 py-3 rounded-full border border-vet-primary/30 bg-vet-bg text-vet-surface focus:outline-none focus:ring-2 focus:ring-vet-primary/50 transition-all placeholder-vet-gray"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />

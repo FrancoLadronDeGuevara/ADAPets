@@ -13,13 +13,12 @@ const ModalHero = ({ isOpen, onClose }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
- 
-  const isValid = 
-    form.tutor.trim() !== "" && 
-    form.mascota.trim() !== "" && 
-    form.tipo !== "Tipo de consulta" && 
+  const isValid =
+    form.tutor.trim() !== "" &&
+    form.mascota.trim() !== "" &&
+    form.tipo !== "Tipo de consulta" &&
     form.fecha !== "" &&
-    Object.keys(errors).every(key => !errors[key]);
+    Object.keys(errors).every((key) => !errors[key]);
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -56,7 +55,7 @@ const ModalHero = ({ isOpen, onClose }) => {
     if (form.tipo === "Tipo de consulta") {
       newErrors.tipo = "Selecciona opción";
     }
-    
+
     if (!form.fecha) {
       newErrors.fecha = "Obligatorio";
     } else if (form.fecha < hoy) {
@@ -92,14 +91,22 @@ const ModalHero = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex">
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div
+        className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+      />
 
       <div className="relative ml-auto w-full md:w-1/2 h-full bg-vet-bg p-8 md:p-12 animate-slide-in overflow-y-auto">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-semibold text-vet-dark dark:text-vet-primary font-['Fredoka']">
+          <h2 className="text-3xl font-semibold text-vet-dark font-['Fredoka']">
             Solicitar Cita
           </h2>
-          <button onClick={onClose} className="text-2xl text-gray-400 hover:text-gray-600">✕</button>
+          <button
+            onClick={onClose}
+            className="text-2xl text-gray-400 hover:text-gray-600"
+          >
+            ✕
+          </button>
         </div>
 
         <form className="space-y-6" onSubmit={handleSubmit} noValidate>
@@ -110,11 +117,17 @@ const ModalHero = ({ isOpen, onClose }) => {
               placeholder="Nombre del tutor"
               value={form.tutor}
               onChange={handleChange}
-              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark text-vet-surface dark:text-vet-text ${
-                errors.tutor ? "border-red-500 ring-1 ring-red-500" : "dark:border-vet-primary/30"
+              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-vet-bg text-vet-surface ${
+                errors.tutor
+                  ? "border-red-500 ring-1 ring-red-500"
+                  : "border-vet-primary/30"
               }`}
             />
-            {errors.tutor && <span className="text-red-500 text-xs mt-1 block">{errors.tutor}</span>}
+            {errors.tutor && (
+              <span className="text-red-500 text-xs mt-1 block">
+                {errors.tutor}
+              </span>
+            )}
           </div>
 
           <div>
@@ -124,11 +137,17 @@ const ModalHero = ({ isOpen, onClose }) => {
               placeholder="Nombre de la mascota"
               value={form.mascota}
               onChange={handleChange}
-              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark text-vet-surface dark:text-vet-text ${
-                errors.mascota ? "border-red-500 ring-1 ring-red-500" : "dark:border-vet-primary/30"
+              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-vet-bg text-vet-surface ${
+                errors.mascota
+                  ? "border-red-500 ring-1 ring-red-500"
+                  : "border-vet-primary/30"
               }`}
             />
-            {errors.mascota && <span className="text-red-500 text-xs mt-1 block">{errors.mascota}</span>}
+            {errors.mascota && (
+              <span className="text-red-500 text-xs mt-1 block">
+                {errors.mascota}
+              </span>
+            )}
           </div>
 
           <div>
@@ -136,8 +155,10 @@ const ModalHero = ({ isOpen, onClose }) => {
               name="tipo"
               value={form.tipo}
               onChange={handleChange}
-              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark text-vet-surface dark:text-vet-text ${
-                errors.tipo ? "border-red-500 ring-1 ring-red-500" : "dark:border-vet-primary/30"
+              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-vet-bg text-vet-surface ${
+                errors.tipo
+                  ? "border-red-500 ring-1 ring-red-500"
+                  : "border-vet-primary/30"
               }`}
             >
               <option disabled>Tipo de consulta</option>
@@ -145,7 +166,11 @@ const ModalHero = ({ isOpen, onClose }) => {
               <option>Vacunación</option>
               <option>Urgencia</option>
             </select>
-            {errors.tipo && <span className="text-red-500 text-xs mt-1 block">{errors.tipo}</span>}
+            {errors.tipo && (
+              <span className="text-red-500 text-xs mt-1 block">
+                {errors.tipo}
+              </span>
+            )}
           </div>
 
           <div>
@@ -154,11 +179,17 @@ const ModalHero = ({ isOpen, onClose }) => {
               type="date"
               value={form.fecha}
               onChange={handleChange}
-              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark text-vet-surface dark:text-vet-text ${
-                errors.fecha ? "border-red-500 ring-1 ring-red-500" : "dark:border-vet-primary/30"
+              className={`w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-vet-bg text-vet-surface ${
+                errors.fecha
+                  ? "border-red-500 ring-1 ring-red-500"
+                  : "border-vet-primary/30"
               }`}
             />
-            {errors.fecha && <span className="text-red-500 text-xs mt-1 block">{errors.fecha}</span>}
+            {errors.fecha && (
+              <span className="text-red-500 text-xs mt-1 block">
+                {errors.fecha}
+              </span>
+            )}
           </div>
 
           <textarea
@@ -167,21 +198,39 @@ const ModalHero = ({ isOpen, onClose }) => {
             placeholder="Comentarios adicionales"
             value={form.comentarios}
             onChange={handleChange}
-            className="w-full p-4 border rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-white dark:bg-vet-dark dark:border-vet-primary/30 text-vet-surface dark:text-vet-text"
+            className="w-full p-4 border border-vet-primary/30 rounded-md focus:outline-none focus:ring-2 focus:ring-vet-primary bg-vet-bg text-vet-surface"
           />
 
           <button
             type="submit"
             disabled={isSubmitting || !isValid}
             className={`w-full p-4 rounded-md font-semibold transition-all flex justify-center items-center gap-2 
-              ${!isValid || isSubmitting 
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed opacity-70" 
-                : "bg-vet-accent text-vet-text hover:bg-vet-accent-hover active:scale-95 shadow-md"}`}
+              ${
+                !isValid || isSubmitting
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed opacity-70"
+                  : "bg-vet-accent text-vet-text hover:bg-vet-accent-hover active:scale-95 shadow-md"
+              }`}
           >
             {isSubmitting && (
-              <svg className="animate-spin h-5 w-5 text-vet-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              <svg
+                className="animate-spin h-5 w-5 text-vet-text"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                ></path>
               </svg>
             )}
             {isSubmitting ? "Enviando..." : "Enviar solicitud"}

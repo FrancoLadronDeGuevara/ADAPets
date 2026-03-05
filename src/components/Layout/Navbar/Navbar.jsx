@@ -39,8 +39,8 @@ const Navbar = ({ onOpenModal }) => {
               onClick={toggleTheme}
               className="
                 relative w-10 h-10
-                bg-vet-text/10 dark:bg-vet-text-dark/10
-                hover:bg-vet-text/20 dark:hover:bg-vet-text-dark/20
+                bg-vet-text/10
+                hover:bg-vet-text/20
                 rounded-full
                 transition-all duration-300
                 flex items-center justify-center
@@ -137,8 +137,8 @@ const Navbar = ({ onOpenModal }) => {
               onClick={toggleTheme}
               className="
                 relative w-10 h-10
-                bg-vet-text/10 dark:bg-vet-text-dark/10
-                hover:bg-vet-text/20 dark:hover:bg-vet-text-dark/20
+                bg-vet-text/10
+                hover:bg-vet-text/20
                 rounded-full
                 transition-all duration-300
                 flex items-center justify-center
@@ -223,17 +223,17 @@ const Navbar = ({ onOpenModal }) => {
             aria-label="Toggle menu"
           >
             <span
-              className={`w-6 h-0.5 bg-vet-text dark:bg-vet-text-dark transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-vet-text transition-all duration-300 ${
                 isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
               }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-vet-text dark:bg-vet-text-dark transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-vet-text transition-all duration-300 ${
                 isMobileMenuOpen ? "opacity-0" : ""
               }`}
             ></span>
             <span
-              className={`w-6 h-0.5 bg-vet-text dark:bg-vet-text-dark transition-all duration-300 ${
+              className={`w-6 h-0.5 bg-vet-text transition-all duration-300 ${
                 isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
             ></span>
@@ -280,7 +280,6 @@ const Navbar = ({ onOpenModal }) => {
                   transition-all duration-300 ease-out
                   hover:bg-vet-accent/80
                   hover:shadow-[0_8px_24px_rgba(233,128,116,0.4)]
-                  dark:hover:shadow-[0_8px_24px_rgba(243,156,146,0.4)]
                   active:scale-95
                 "
               >
