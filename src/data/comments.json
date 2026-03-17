@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "usuario": "Lucía Méndez",
+    "fecha": "2026-03-16",
+    "comentario": "Excelente atención y productos para mi perro 🐶. Los juguetes son de muy buena calidad.",
+    "likes": 2
+  },
+  {
+    "id": 2,
+    "usuario": "Martín Silva",
+    "fecha": "2026-03-10",
+    "comentario": "Siempre encuentro el alimento específico que necesita mi gato. ¡Muy recomendables! 🐈",
+    "likes": 5
+  },
+  {
+    "id": 3,
+    "usuario": "Sofía Castro",
+    "fecha": "2026-03-05",
+    "comentario": "El servicio de peluquería canina es fantástico. Mi Golden volvió hermoso y súper feliz ✨.",
+    "likes": 12
+  },
+  {
+    "id": 4,
+    "usuario": "Andrés Gómez",
+    "fecha": "2026-02-28",
+    "comentario": "Precios justos y envío rápido de la comida. La mejor Pet Shop de la zona 💯.",
+    "likes": 1
+  },
+  {
+    "id": 5,
+    "usuario": "Valentina Ruiz",
+    "fecha": "2026-02-15",
+    "comentario": "Compré unos accesorios para mi hámster y le encantaron. Muy buena variedad de productos 🐹.",
+    "likes": 8
+  },
+  {
+    "id": 6,
+    "usuario": "Carlos Herrera",
+    "fecha": "2026-02-02",
+    "comentario": "Llevé a mi perico para que le cortaran las uñas y fueron muy profesionales. ¡Gracias! 🦜",
+    "likes": 4
+  },
+  {
+    "id": 7,
+    "usuario": "Mariana López",
+    "fecha": "2026-01-20",
+    "comentario": "Tienen unas camitas hermosas, mi bulldog ahora duerme como un rey. 👑🐶",
+    "likes": 15
+  }
+]
