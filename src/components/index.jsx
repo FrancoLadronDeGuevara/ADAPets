@@ -7,6 +7,7 @@ import Contact from "./Contact/Contact";
 import Services from "./Services/Services";
 import Background from "./Background/Background";
 import About from "./About/About";
+import PetShopSection from "./PetShopSection/PetShopSection";
 
 export {
   HeroSection,
@@ -18,4 +19,5 @@ export {
   Services,
   Background,
   About,
+  PetShopSection,
 };

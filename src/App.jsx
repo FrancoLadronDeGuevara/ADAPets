@@ -12,6 +12,7 @@ import {
   Contact,
   Services,
   About,
+  PetShopSection,
 } from "@/components";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <About />
 
         <Services />
+        <PetShopSection />
 
         {!isModalOpen && <WhatsappBtn onOpenHelp={() => setIsHelpOpen(true)} />}
 
