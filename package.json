@@ -1,7 +1,7 @@
 {
-  "name": "ADAPets",
+  "name": "adapets",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "motion": "^12.35.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {

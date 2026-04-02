@@ -1,0 +1,89 @@
+@reference '../../App.css';
+
+@layer utilities {
+
+  .about-section {
+    @apply relative w-full py-24 px-4 md:px-8 overflow-hidden;
+  }
+
+  .about-wrapper {
+    @apply relative z-10 max-w-6xl mx-auto flex flex-col gap-12;
+  }
+
+  .about-badge {
+    @apply self-start flex items-center gap-2 px-4 py-1.5 rounded-full
+           text-sm font-semibold font-quicksand tracking-wide
+           text-vet-text bg-vet-accent/80 backdrop-blur-sm
+           shadow-md;
+  }
+
+  .about-content {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-12 items-start;
+  }
+
+  .about-text-col {
+    @apply flex flex-col gap-6;
+  }
+
+  .about-title {
+    @apply text-4xl md:text-5xl font-bold font-fredoka leading-tight text-vet-surface;
+  }
+
+  .about-title-accent {
+    @apply text-vet-primary;
+  }
+
+  .about-lead {
+    @apply text-lg text-vet-surface/90 leading-relaxed font-quicksand;
+  }
+
+  .about-body {
+    @apply text-base text-vet-surface/70 leading-relaxed font-quicksand;
+  }
+
+  .about-stat-row {
+    @apply grid grid-cols-3 gap-4 pt-4
+           border-t border-vet-primary/20;
+  }
+
+  .about-stat {
+    @apply flex flex-col gap-1;
+  }
+
+  .about-stat-value {
+    @apply text-3xl font-bold font-fredoka text-vet-primary;
+  }
+
+  .about-stat-label {
+    @apply text-xs text-vet-surface/60 font-quicksand leading-tight;
+  }
+
+  .about-pillars-col {
+    @apply flex flex-col gap-4;
+  }
+
+  .about-pillar {
+    @apply flex items-start gap-4 p-5 rounded-2xl
+           transition-all duration-300
+           border border-transparent;
+    background-color: color-mix(in srgb, var(--color-vet-primary), transparent 88%);
+  }
+
+  .about-pillar:hover {
+    border-color: color-mix(in srgb, var(--color-vet-primary), transparent 60%);
+    background-color: color-mix(in srgb, var(--color-vet-primary), transparent 80%);
+  }
+
+  .about-pillar-icon {
+    @apply shrink-0 w-10 h-10 flex items-center justify-center rounded-xl
+           bg-vet-accent/20 text-vet-accent;
+  }
+
+  .about-pillar-title {
+    @apply text-base font-bold font-fredoka text-vet-surface mb-1;
+  }
+
+  .about-pillar-text {
+    @apply text-sm text-vet-surface/65 font-quicksand leading-relaxed;
+  }
+}

@@ -1,0 +1,152 @@
+@reference '../../App.css';
+
+@layer utilities {
+
+  
+  .section {
+    @apply relative w-full flex flex-col items-center justify-center p-6
+           transition-colors duration-300 min-h-screen overflow-hidden;
+  }
+
+  .wrapperSection {
+    @apply relative z-10 w-full flex flex-col items-center;
+  }
+
+  
+  .titleSection {
+    background-color: color-mix(
+      in srgb,
+      var(--color-vet-primary),
+      transparent 20%
+    );
+    @apply backdrop-blur-md uppercase w-full max-w-5xl text-center text-3xl
+           text-vet-text py-3 font-bold font-fredoka tracking-wide rounded-t-xl
+           shadow-sm;
+  }
+
+  
+  .contact-grid {
+    @apply w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: none;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  
+  .formContact {
+    @apply flex flex-col gap-5 items-center p-8
+           bg-vet-bg/5 backdrop-blur-[5px];
+  }
+
+  .formGroup {
+    @apply w-full flex flex-col gap-1.5;
+  }
+
+  .formLabel {
+    @apply text-vet-surface font-medium ml-1;
+  }
+
+  .formInput {
+    @apply w-full p-3 rounded-md outline-none border transition-all
+           bg-vet-gray/20 text-vet-surface placeholder-vet-gray/50;
+  }
+
+  .error {
+    @apply text-red-400 text-xs mt-1 ml-1 font-medium;
+  }
+
+  .successMessage {
+    @apply mt-4 p-3 bg-green-100 border border-green-400 text-green-700
+           text-center rounded-md animate-pulse;
+  }
+
+  .btnContactSubmit {
+    @apply w-1/2 sm:w-1/3 p-3 rounded-md font-bold text-lg mt-4 transition-all
+           duration-300 ease-out bg-vet-accent text-vet-text flex items-center
+           gap-4 justify-center relative;
+  }
+
+  .spanBtnContactSubmit {
+    @apply transition-transform duration-300 group-hover:translate-x-2;
+  }
+
+  
+  .contact-map-wrapper {
+    @apply flex flex-col gap-3 p-6 bg-vet-dark/30 backdrop-blur-sm
+           border-l-0 lg:border-l border-white/10;
+    min-height: 380px;
+  }
+
+  .contact-map-header {
+    @apply flex items-start gap-3;
+  }
+
+  .contact-map-address {
+    @apply flex flex-col leading-tight;
+  }
+
+  .contact-map-street {
+    @apply text-vet-surface font-semibold text-sm;
+  }
+
+  .contact-map-city {
+    @apply text-vet-gray text-xs;
+  }
+
+  .contact-map-frame {
+    @apply flex-1 w-full rounded-xl overflow-hidden;
+    min-height: 260px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .contact-map-frame iframe {
+    @apply block w-full h-full;
+    min-height: 260px;
+    filter: grayscale(20%) contrast(1.05);
+    transition: filter 0.4s ease;
+  }
+
+  .contact-map-frame:hover iframe {
+    filter: grayscale(0%) contrast(1.1);
+  }
+
+  .contact-map-link {
+    @apply text-xs font-medium text-vet-primary hover:text-vet-accent
+           transition-colors duration-200 self-end;
+    letter-spacing: 0.03em;
+  }
+
+  
+  .contact-bg-blob {
+    @apply absolute rounded-full pointer-events-none;
+    filter: blur(80px);
+    opacity: 0.18;
+  }
+
+  .contact-bg-blob--1 {
+    width: 420px;
+    height: 420px;
+    background: var(--color-vet-primary);
+    top: -80px;
+    left: -100px;
+    animation: blob-drift 12s ease-in-out infinite alternate;
+  }
+
+  .contact-bg-blob--2 {
+    width: 340px;
+    height: 340px;
+    background: var(--color-vet-accent);
+    bottom: -60px;
+    right: -80px;
+    animation: blob-drift 15s ease-in-out infinite alternate-reverse;
+  }
+
+  @keyframes blob-drift {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(30px, 20px) scale(1.08); }
+  }
+}

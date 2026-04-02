@@ -1,7 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap");
+
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@theme {
+  --color-vet-bg: #FAFAFA;
+  --color-vet-text: #ffffff;
+  --color-vet-primary: #10B981;
+  --color-vet-dark: #0F172A;
+  --color-vet-surface: #334155;
+  --color-vet-accent: #F59E0B;
+  --color-vet-accent-hover: #D97706;
+  --color-vet-text-muted: rgba(250, 250, 250, 0.8);
+  --color-vet-gray: #94A3B8;
+
+  --font-fredoka: "Fredoka", sans-serif;
+  --font-quicksand: "Quicksand", sans-serif;
+
+  --shadow-glow-dark: 0 0 20px 10px var(--color-vet-dark);
+  --shadow-glow-bg: 0 0 20px 10px var(--color-vet-bg);
+}
+
+.dark {
+  --color-vet-bg: #020617;
+  --color-vet-text: #F8FAFC;
+  --color-vet-primary: #34D399;
+  --color-vet-dark: #1E293B;
+  --color-vet-surface: #CBD5E1;
+  --color-vet-accent: #FBBF24;
+  --color-vet-accent-hover: #F59E0B;
+  --color-vet-text-muted: rgba(203, 213, 225, 0.75);
+  --color-vet-gray: #94A3B8;
+}
+
+@layer base {
+  body {
+    @apply bg-vet-bg text-vet-surface transition-colors duration-300;
+    font-family: "Roboto", sans-serif;
+    height: 100vh;
+  }
 }

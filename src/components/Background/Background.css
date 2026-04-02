@@ -1,0 +1,27 @@
+@layer utilities {
+    @keyframes paw-fade-walk {
+
+        0%,
+        5% {
+            opacity: 0;
+            transform: scale(0.5) rotate(var(--rot));
+        }
+
+        15%,
+        85% {
+            opacity: 0.2;
+            transform: scale(1) rotate(var(--rot));
+        }
+
+        95%,
+        100% {
+            opacity: 0;
+            transform: scale(0.8) rotate(var(--rot));
+        }
+    }
+
+    .animate-paw {
+        animation: paw-fade-walk 12s linear infinite;
+        opacity: 0;
+    }
+}
