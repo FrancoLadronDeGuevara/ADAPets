@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { fromLeft, cardVariant } from "../../utils/animations";
 
 const petImages = [
@@ -45,12 +46,12 @@ const PetShopSection = () => {
           </p>
 
           <div className="flex flex-wrap gap-4 items-center">
-            <button className="bg-vet-accent hover:bg-vet-accent-hover text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_rgba(233,128,116,0.3)] hover:shadow-[0_15px_25px_rgba(233,128,116,0.5)] hover:-translate-y-1 cursor-pointer">
+            <Link to="/404" className="bg-vet-accent hover:bg-vet-accent-hover text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-[0_10px_20px_rgba(233,128,116,0.3)] hover:shadow-[0_15px_25px_rgba(233,128,116,0.5)] hover:-translate-y-1 block text-center cursor-pointer">
               Visitar Pet Shop
-            </button>
-            <button className="bg-transparent text-vet-dark hover:text-vet-primary px-6 py-4 rounded-full font-bold text-lg transition-colors duration-300 cursor-pointer">
+            </Link>
+            <Link to="/404" className="bg-transparent text-vet-dark hover:text-vet-primary px-6 py-4 rounded-full font-bold text-lg transition-colors duration-300 cursor-pointer block text-center">
               Ver Catálogo →
-            </button>
+            </Link>
           </div>
         </motion.div>
 

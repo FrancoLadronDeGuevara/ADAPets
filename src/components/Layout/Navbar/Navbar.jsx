@@ -185,7 +185,7 @@ const Navbar = ({ onOpenModal }) => {
                 bg-vet-accent
                 text-vet-text
                 px-6 py-3
-                rounded-md
+                rounded-full
                 font-semibold text-sm
                 tracking-tight
                 transition-all duration-300 ease-out
@@ -263,7 +263,7 @@ const Navbar = ({ onOpenModal }) => {
                   bg-vet-accent
                   text-vet-text
                   px-6 py-3
-                  rounded-md
+                  rounded-full
                   font-semibold text-sm
                   tracking-tight
                   transition-all duration-300 ease-out

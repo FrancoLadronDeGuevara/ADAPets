@@ -113,7 +113,7 @@ const HeroSection = ({ onOpenModal }) => {
               className="
                 cursor-pointer group relative
                 bg-vet-accent text-vet-text
-                px-10 py-4 rounded-md
+                px-10 py-4 rounded-full
                 font-semibold text-lg tracking-tight
                 transition-colors duration-300 ease-out
                 hover:bg-vet-accent-hover

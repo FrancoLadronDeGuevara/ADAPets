@@ -7,7 +7,11 @@ import { fromLeft, fromRight, fromBottom } from "@/utils/animations";
 import "./Contact.css";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ nombre: "", email: "", mensaje: "" });
+  const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
+    mensaje: "",
+  });
   const [errors, setErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
@@ -59,11 +63,11 @@ const Contact = () => {
     <section className="section" id="Contacto">
       <div className="wrapperSection">
         <motion.div
-           initial={{ opacity: 0, y: -24 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: false, amount: 0.3 }}
-           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-           className="flex flex-col items-center text-center gap-4 mb-16"
+          initial={{ opacity: 0, y: -24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center gap-4 mb-16"
         >
           <div className="flex items-center justify-center gap-2">
             <span className="w-8 h-1 bg-vet-primary rounded-full"></span>
@@ -80,7 +84,9 @@ const Contact = () => {
         <div className="contact-grid">
           <motion.div className="formContact" {...fromLeft(0)}>
             <motion.div className="formGroup" {...fromBottom(0.1)}>
-              <label htmlFor="nombre" className="formLabel">Nombre:</label>
+              <label htmlFor="nombre" className="formLabel">
+                Nombre:
+              </label>
               <input
                 type="text"
                 id="nombre"
@@ -94,7 +100,9 @@ const Contact = () => {
             </motion.div>
 
             <motion.div className="formGroup" {...fromBottom(0.2)}>
-              <label htmlFor="email" className="formLabel">Email:</label>
+              <label htmlFor="email" className="formLabel">
+                Email:
+              </label>
               <input
                 type="email"
                 id="email"
@@ -108,7 +116,9 @@ const Contact = () => {
             </motion.div>
 
             <motion.div className="formGroup" {...fromBottom(0.3)}>
-              <label htmlFor="mensaje" className="formLabel">Mensaje:</label>
+              <label htmlFor="mensaje" className="formLabel">
+                Mensaje:
+              </label>
               <textarea
                 id="mensaje"
                 name="mensaje"
@@ -118,7 +128,9 @@ const Contact = () => {
                 className={`formInput ${errors.mensaje ? "border-red-400 ring-1 ring-red-400" : "border-transparent focus:ring-2 focus:ring-vet-primary"}`}
                 placeholder="Escribe tu consulta aquí..."
               />
-              {errors.mensaje && <span className="error">{errors.mensaje}</span>}
+              {errors.mensaje && (
+                <span className="error">{errors.mensaje}</span>
+              )}
             </motion.div>
 
             <motion.button
@@ -131,7 +143,9 @@ const Contact = () => {
               className={`btnContactSubmit group ${isSending ? "bg-gray-400 cursor-not-allowed opacity-70" : "hover:bg-vet-accent-hover hover:shadow-[0_16px_40px_rgba(233,128,116,0.45)] cursor-pointer"}`}
             >
               Enviar
-              <span className="spanBtnContactSubmit"><BsSend /></span>
+              <span className="spanBtnContactSubmit">
+                <BsSend />
+              </span>
             </motion.button>
 
             {isSubmitted && (
@@ -151,7 +165,9 @@ const Contact = () => {
               <FaMapMarkerAlt size={18} className="text-vet-accent" />
               <div className="contact-map-address">
                 <span className="contact-map-street">Tucumán 1851</span>
-                <span className="contact-map-city">Capital Federal, Buenos Aires</span>
+                <span className="contact-map-city">
+                  Capital Federal, Buenos Aires
+                </span>
               </div>
             </div>
 

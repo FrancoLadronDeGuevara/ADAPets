@@ -9,6 +9,7 @@ import Background from "./Background/Background";
 import About from "./About/About";
 import PetShopSection from "./PetShopSection/PetShopSection";
 import CommentsSection from "./CommentsSection/CommentsSection";
+import NotFound from "./NotFound/NotFound";
 
 export {
   HeroSection,
@@ -22,4 +23,5 @@ export {
   About,
   PetShopSection,
   CommentsSection,
+  NotFound,
 };
